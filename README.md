@@ -7,5 +7,8 @@
        sudo add-apt-repository --yes --update ppa:ansible/ansible
        sudo apt install ansible
  # 4 On the MasteAnsible do ===> 
-    sudo  cat /etc/ansible/hosts
+    sudo  vi /etc/ansible/hosts
+    [web]
+    webserversipAdress ansible_userubuntu ssh_copy
+  #
     
