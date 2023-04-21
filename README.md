@@ -6,6 +6,7 @@
        sudo apt install software-properties-common
        sudo add-apt-repository --yes --update ppa:ansible/ansible
        sudo apt install ansible
+ # First method to etablish connection Master and Slaves 
  # 4 On the MasteAnsible do ===> 
      mkdir /var/myansible/
      Copy your key pair  on this directory ==>  /var/myansible/
@@ -25,5 +26,26 @@
                     touch main.yml
      # Create your plabook file outside of these above folders 
          touch nginx.yml 
-           
+     # Run the following command  to test your playbook
+       ansible-playbook +playbookName 
+     # Second Method to etablish connection betweern MasterAnsible and Slaves 
+     # 1 Create ansible user to all three serves 
+     # 2  Set password for ansible
+     # 3 Do the following to the two slaves servers 
+         sudo vi /etc/ssh/sshd_config
+         PasswordAuthentication yes
+         sudo systemctl restart sshd
+     # 4 On the master node do this:
+       sudo su - ansible
+       ssh-keygen
+       acept the default value 
+       ssh-copy-id ansible@swebipaddress
+       ssh-copy-id ansible@sdatabaseipaddress
+     # 5 Try the connection between Master and nodes
+        
+          ansible all -m ping 
+
+
+
+       
     
