@@ -15,5 +15,15 @@
     webserversipAdress ansible_user=ubuntu  ansible_ssh_private_key_file= /var/myansible/youkeyName.pem
     [databases]
     databaseIpd ansible_user=ubuntu  ansible_ssh_private_key_file= /var/myansible/youkeyName.pem
-  #
+  # 5 Check to see if MasterAnsible can talk to its slaves nodes
+     ansible all -m ping 
+  # Now let learn how to create a roles  from scratch : NB it could be achievable by ansible-galaxy but we want to be more familiar with roles with small tasks 
+        # create three folders 
+          mkdir roles
+              mkdir nginx
+                 mkdir tasks
+                    touch main.yml
+     # Create your plabook file outside of these above folders 
+         touch nginx.yml 
+           
     
