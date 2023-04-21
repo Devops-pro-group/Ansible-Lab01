@@ -10,7 +10,8 @@
        sudo apt install ansible
  # First method to etablish connection Master and Slaves 
  # 4 On the MasteAnsible do ===> 
-     mkdir /var/myansible/
+     cd /var/
+     mkdir /myansible/
      Copy your key pair  on this directory ==>  /var/myansible/
      sudo chmod 400 yourkey.pem 
     sudo  vi /etc/ansible/hosts
